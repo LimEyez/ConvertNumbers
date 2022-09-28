@@ -1,0 +1,140 @@
+@font-face {
+    font-family: 'PressStart2P';
+    src: url('/src/Fonts/PressStart2P-Regular.ttf');
+}
+
+.div_component {
+    margin: 10px;
+}
+
+.Head_Input {
+    position: relative;
+    /* background-color: aliceblue; */
+    width: 70%;
+    /* max-width: 50%; */
+
+    /* width: 30%; */
+}
+
+.Head_Button {
+    position: relative;
+    background-color: rgba(218, 0, 116, 0);
+    margin-top: 12px;
+}
+
+#convert {
+    font-family: 'PressStart2P';
+    z-index: 1;
+    font-size: 1vh;
+    text-transform: uppercase;
+    color: #36db38;
+    background-color: rgba(0, 136, 255, 0);
+    border: none;
+    border-style: double;
+    outline: none;
+    text-align: center;
+    height: 5vh;
+    width: 100%;
+    animation: pulseBorder 4s linear infinite;
+}
+
+@keyframes pulseBorder {
+    0% {
+        border-color: #36db38;
+    }
+
+    50% {
+        border-color: #36db392c;
+    }
+
+    100% {
+        border-color: #36db38;
+    }
+}
+
+.bord {
+    z-index: 1;
+    background-color: rgba(0, 136, 255, 0);
+    border: none;
+    border-style: double;
+    outline: none;
+    text-align: center;
+    height: 5vh;
+    width: 100%;
+    animation: pulseBorder 4s linear infinite;
+    position: absolute;
+    transform: rotateX(28deg);
+}
+
+#number {
+    font-family: 'PressStart2P';
+    font-size: 5vh;
+    text-transform: uppercase;
+    color: #36db38;
+    background-color: rgba(0, 136, 255, 0);
+    border: 0;
+    outline: none;
+    text-align: center;
+    height: 5vh;
+    width: 100%;
+}
+
+#number::placeholder {
+    color: #36db3934;
+    text-align: center;
+}
+
+.res10 {
+    color: #231fff;
+    font-family: 'PressStart2P';
+}
+
+.nameTitle {
+    color: #36db39;
+    font-size: 2vh;
+    font-family: 'PressStart2P';
+    margin: 0 0 3px 0;
+    text-decoration: underline;
+}
+
+.results {
+    font-family: 'PressStart2P';
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    color: #aba9ff;
+    margin-top: 20px;
+}
+
+.elemResult {
+    min-width: 256px;
+    margin: 0 10px 0 10px;
+}
+
+.system {
+    font-family: 'PressStart2P';
+    color: #aba9ff;
+    font-size: 1.2vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 24px 0;
+}
+
+.btnSystem {
+    font-family: 'PressStart2P';
+    width: 4vh;
+    height: 2vh;
+    background-color: #e9e9e900;
+    color: white;
+}
+
+.btnSystem_active{
+    font-family: 'PressStart2P';
+    width: 4vh;
+    height: 2vh;
+    background-color: #e9e9e900;
+    color: white;
+    text-decoration: underline;
+}
