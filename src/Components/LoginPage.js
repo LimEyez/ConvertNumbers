@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Button from "./Button"
 export default function LoginPage({ setUser_token, Server }) {
     const [typePassword, setTypePassword] = useState('password')
@@ -11,6 +11,21 @@ export default function LoginPage({ setUser_token, Server }) {
             setUser_token(data.token);
         })
     }
+    useEffect(() => {
+        let inputLogin = document.getElementById('id_login');
+        let inputPassword = document.getElementById('id_password');
+        inputLogin.addEventListener('keypress', (event) => {
+            if (event.keyCode === 13) {
+                inputPassword.focus();
+            }
+        });
+        inputPassword.addEventListener('keypress', (event) => {
+            if (event.keyCode === 13) {
+                login();
+            }
+        });
+        inputLogin.focus();
+    })
     return (
         <div className="App, title_login">
             <h3 >Login</h3>
