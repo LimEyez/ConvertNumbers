@@ -126,15 +126,59 @@
     font-family: 'PressStart2P';
     width: 4vh;
     height: 2vh;
-    background-color: #e9e9e900;
+    background-color: #00000000;
     color: white;
+    border: #00000000;
 }
 
 .btnSystem_active{
     font-family: 'PressStart2P';
+    border: #00000000;
     width: 4vh;
     height: 2vh;
     background-color: #e9e9e900;
     color: white;
     text-decoration: underline;
+}
+
+.title_login{
+    color: #ffffff;
+    font-size: 2vh;
+    font-family: 'PressStart2P';
+    display: flex;
+    margin: 0 0 3px 0;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input_login{
+    font-family: 'PressStart2P';
+    font-size: 2vh;
+    color: #36db38;
+    background-color: rgba(0, 136, 255, 0);
+    border: 0;
+    outline: none;
+    text-align: center;
+    height: 5vh;
+    width: auto;
+}
+.btn_login{
+    font-family: 'PressStart2P';
+    z-index: 1;
+    font-size: 1vh;
+    text-transform: uppercase;
+    color: #36db38;
+    background-color: rgba(0, 136, 255, 0);
+    border: none;
+    border-style: double;
+    outline: none;
+    text-align: center;
+    height: 5vh;
+    width: 100%;
+    animation: pulseBorder 4s linear infinite;
+}
+
+.seePassword{
+    display: flex;
 }

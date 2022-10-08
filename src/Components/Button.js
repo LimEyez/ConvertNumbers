@@ -2,13 +2,14 @@
 
 
 const Button = (props) => {
-    const { id_convert, value, start } = props;
+    const { id, value, func, classname } = props;
 
     return (
         <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
             <button
-                id={id_convert}
-                onClick={() => start()}
+                className={classname}
+                id={id}
+                onClick={() => func()}
             >{value}</button>
         </div >
     )

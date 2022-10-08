@@ -1,36 +1,38 @@
-
-import Input from './Components/Input';
-import Button from './Components/Button';
-import Result from './Components/Result';
+import { useState } from 'react';
+import LoginPage from './Components/LoginPage';
+import ConvertPage from './Components/ConvertPage';
 import Start from './Scripts/Start';
+import store2 from './Stores/store2';
 import './App.css';
 import './Styles/style_components.css'
 
 function App() {
+  const server = store2.getState().server;
+  const [user_token, setUser_token] = useState(null);
   const id_number = 'number';
   const id_convert = 'convert';
-  // const [sys, setSys] = useState('default');
-  const start = () => Start({ id_convert, id_number});
+  const start = () => Start({ id_convert, id_number }, server);
 
-  return (
-    <div className="App">
-      <div className='Head_Input'>
-        <Input
-          id_number={id_number}
-          // setSys={(num) => { setSys(num) }}
-          start={(system) => start(system)}
-        ></Input>
-      </div>
-      <div className='Head_Button'>
-        <Button
-          id_convert={id_convert}
-          value='press ENTER'
-          start={() => start()}
-        ></Button>
-      </div>
-      <Result></Result>
-    </div>
-  );
+  const convertPage = () => {
+    return (
+      <ConvertPage
+        id_number={id_number}
+        id_convert={id_convert}
+        start={(system) => start(system)}
+      />
+    )
+  }
+
+  const loginPage = () => {
+    return (
+      <LoginPage
+        setUser_token={(token) => setUser_token(token)}
+        Server={server}
+      />
+    )
+  }
+
+  return user_token ? convertPage() : loginPage();
 }
 
 export default App;

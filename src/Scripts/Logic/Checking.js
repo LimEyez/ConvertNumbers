@@ -1,34 +1,17 @@
-import store from "../Stores/store";
-
-class Conversion {
+import store from "../../Stores/store";
+export default class Checking {
     constructor(props) {
-        const { id_number, sys } = props;
+        const {id_number, sys} = props;
         this.sys = sys;
         this.input = document.getElementById(id_number);
         this.string = this.input.value;
         this.result = null;
-    };
-
+    }
     funcError(check, checkOnChars = true) {
         if (check && checkOnChars) store.dispatch({ type: 'text', value: 'Строка содержит недопустимые символы!' });
         else if (check && !checkOnChars) store.dispatch({ type: 'text', value: `Строка содержит недопустимые символы системы счисления ${this.sys}!` });
         else if (check) store.dispatch({ type: 'text', value: 'Вы смешали символы!' });
         else store.dispatch({ type: 'text', value: 'Неизвестная ошибка' });
-    };
-
-    //Отправка данных на бэкэнд
-    async drop_to_backend(params = {}) {
-        const query = Object.keys(params).map(key =>
-            `${key}=${params[key]}`).join('&');
-        this.result = await (await fetch(`http://conversionnumber.loc/?${query}`)).json();
-        if (this.result.text === "Всё нормально?!?") {
-            store.dispatch({ type: "text", value: this.result.text });
-        }
-        else {
-            for (let key in this.result) {
-                store.dispatch({ type: key, value: this.result[key] });
-            };
-        };
     };
 
     //Проверка на допустимые символы
@@ -67,7 +50,7 @@ class Conversion {
             };
         }
         if (check) {
-            this.drop_to_backend({ number: string });
+            return true
         }
         else {
             this.funcError(!check, checkOnChars);
@@ -97,12 +80,10 @@ class Conversion {
             };
         }
         if (check) {
-            this.drop_to_backend({ number: string, sys: this.sys });
+            return true;
         }
         else {
             this.funcError(!check, false);
         };
     };
 }
-
-export default Conversion

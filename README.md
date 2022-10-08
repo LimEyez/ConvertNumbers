@@ -1,3 +1,10 @@
+# Изменения:
+Добавлена первичная авторизация по логину: vasya, паролю: 123git 
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
