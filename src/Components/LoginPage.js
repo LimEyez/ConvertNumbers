@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react"
 import Button from "./Button"
-export default function LoginPage({ setUser_token, Server }) {
+export default function LoginPage({ setUser_token, server }) {
     const [typePassword, setTypePassword] = useState('password')
-    const server = Server;
     const login = () => {
         const login = document.getElementById('id_login').value;
         const password = document.getElementById('id_password').value;

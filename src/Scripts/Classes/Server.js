@@ -7,7 +7,7 @@ export default class Server {
     async send(params = {}) {
         const query = Object.keys(params).map(key =>
             `${key}=${params[key]}`).join('&');
-            const result = (await (await fetch(`http://conversionnumber.loc/?${query}`)).json());
+        const result = (await (await fetch(`http://conversionnumber.loc/?${query}`)).json());
         return result.data;
     }
 
@@ -18,6 +18,11 @@ export default class Server {
             return data;
         }
         return null;
+    }
+
+    async logout() {
+        const data = await this.send({ method: 'logout', token: this.token });
+        return data;
     }
 
     convert(params = {}) {

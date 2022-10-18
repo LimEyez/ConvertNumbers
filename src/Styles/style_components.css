@@ -163,7 +163,7 @@
     height: 5vh;
     width: auto;
 }
-.btn_login{
+.btn_login, #btn_logout{
     font-family: 'PressStart2P';
     z-index: 1;
     font-size: 1vh;
@@ -177,6 +177,12 @@
     height: 5vh;
     width: 100%;
     animation: pulseBorder 4s linear infinite;
+}
+
+#btn_logout{
+    margin: 15px 0 0 0;
+    animation: none;
+    color: #2ab6e0;
 }
 
 .seePassword{

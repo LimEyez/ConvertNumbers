@@ -19,6 +19,8 @@ function App() {
         id_number={id_number}
         id_convert={id_convert}
         start={(system) => start(system)}
+        setUser_token={(token) => setUser_token(token)}
+        server={server}
       />
     )
   }
@@ -27,7 +29,7 @@ function App() {
     return (
       <LoginPage
         setUser_token={(token) => setUser_token(token)}
-        Server={server}
+        server={server}
       />
     )
   }
