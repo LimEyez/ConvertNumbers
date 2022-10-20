@@ -33,4 +33,17 @@ export default class Server {
         }
         return null;
     }
+
+    async sendMessage(message) {
+        if (/\S/.test(message)) {
+            return await this.send({ method: 'sendMessage', message, token: this.token })
+        }
+    }
+
+    async getChat() {
+        if (this.token) {
+            return  await this.send({ method: 'getChat', token: this.token })
+        }
+
+    }
 }

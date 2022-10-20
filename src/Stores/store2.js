@@ -11,7 +11,7 @@ function reducer(stack = defaultObject, action) {
         case 'sys':
             return { ...stack, sys: action.value };
         case 'clear':
-            return {...stack, sys: 10};
+            return { ...stack, sys: 10 };
         default:
             return stack;
     };

@@ -1,7 +1,10 @@
 import Input from "./Input"
 import Button from "./Button"
 import Result from "./Result"
+import Chat from "./Chat"
 import store from "../Stores/store"
+import store_chat from "../Stores/store_chat"
+
 export default function ConvertPage(props) {
     const { id_number, id_convert, start, server, setUser_token } = props
 
@@ -10,7 +13,8 @@ export default function ConvertPage(props) {
         data.then((data) => {
             setUser_token(data.token);
         })
-        store.dispatch({ type: 'clear'});
+        store.dispatch({ type: 'clear' });
+        store_chat.dispatch({type: 'clean'})
     }
 
     return (
@@ -34,6 +38,9 @@ export default function ConvertPage(props) {
                 ></Button>
             </div>
             <Result></Result>
+            <Chat
+            server = {server}
+            ></Chat>
         </div>
     )
 }
