@@ -1,41 +1,31 @@
 import { useEffect, useState } from "react"
 import Message from "./Message";
 import store_chat from "../Stores/store_chat";
-export default function Chat({ server }) {
 
+export default function Chat({ server }) {
     const [updateChat, setUpdateChat] = useState(true);
-    const arrayOfChat = store_chat.getState().array;
+    const arrayOfChat = store_chat.getState().messages;
+
     useEffect(() => {
         const input = document.getElementById('textMessage');
         const btn = document.getElementById('sendMessage');
-        const chat = document.getElementById('chat');
+        let hash = store_chat.getState().hash;
 
-
-        setInterval(() => {
-            const getChat = async () => {
-                const chat = await server.getChat().then(data => { return data });
-                if (chat && chat[chat.length - 1].date !== store_chat.getState().date) {
-                    store_chat.dispatch({ type: 'date', value: chat[chat.length - 1].date });
-                    store_chat.dispatch({ type: 'save', value: chat.reverse() });
-                }
+        const getChat = async () => {
+            const getChatFromDB = await server.getMessages(hash);
+            if (getChatFromDB.messages) {
+                store_chat.dispatch({ type: 'hash', value: getChatFromDB.hash });
+                store_chat.dispatch({ type: 'save', value: getChatFromDB.messages.reverse() });
+                setUpdateChat(!updateChat);
             }
-            //Получение чата
-            getChat();
-            //Отслеживание изменения чата
-        }, 1000);
-        store_chat.subscribe(() => {
-            setUpdateChat(!updateChat);
-        })
+            else {
+                setTimeout(getChat, 1000);
+            }
+        }
 
-        // const getChat = async () => {
-        //     const chat = await server.getChat().then(data => { return data });
-        //     if (chat) {
-        //         store_chat.dispatch({ type: 'save', value: chat.reverse() });
-        //     }
-        // }
+        getChat();
 
         btn.addEventListener('click', () => {
-            chat.scrollTo(0, chat.scrollHeight);
             server.sendMessage(input.value);
             input.value = '';
         })

@@ -7,7 +7,7 @@ export default class Server {
     async send(params = {}) {
         const query = Object.keys(params).map(key =>
             `${key}=${params[key]}`).join('&');
-        const result = (await (await fetch(`http://conversionnumber.loc/?${query}`)).json());
+        const result = (await (await fetch(`http://conversionnumber.loc/api/?${query}`)).json());
         return result.data;
     }
 
@@ -40,9 +40,9 @@ export default class Server {
         }
     }
 
-    async getChat() {
+    async getMessages(hash) {
         if (this.token) {
-            return  await this.send({ method: 'getChat', token: this.token })
+            return  await this.send({ method: 'getMessages', token: this.token, hash })
         }
 
     }
