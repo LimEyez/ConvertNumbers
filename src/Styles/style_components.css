@@ -1,0 +1,365 @@
+@font-face {
+    font-family: 'PressStart2P';
+    src: url('/src/Fonts/PressStart2P-Regular.ttf');
+}
+
+.div_component {
+    margin: 10px;
+}
+
+.Head_Input {
+    position: relative;
+    /* background-color: aliceblue; */
+    width: 70%;
+    /* max-width: 50%; */
+
+    /* width: 30%; */
+}
+
+.Head_Button {
+    position: relative;
+    background-color: rgba(218, 0, 116, 0);
+    margin-top: 12px;
+}
+
+#convert {
+    font-family: 'PressStart2P';
+    z-index: 1;
+    font-size: 1vh;
+    text-transform: uppercase;
+    color: #36db38;
+    background-color: rgba(0, 136, 255, 0);
+    border: none;
+    border-style: double;
+    outline: none;
+    text-align: center;
+    height: 5vh;
+    width: 100%;
+    animation: pulseBorder 4s linear infinite;
+}
+
+@keyframes pulseBorder {
+    0% {
+        border-color: #36db38;
+    }
+
+    50% {
+        border-color: #36db392c;
+    }
+
+    100% {
+        border-color: #36db38;
+    }
+}
+
+.bord {
+    z-index: 1;
+    background-color: rgba(0, 136, 255, 0);
+    border: none;
+    border-style: double;
+    outline: none;
+    text-align: center;
+    height: 5vh;
+    width: 100%;
+    animation: pulseBorder 4s linear infinite;
+    position: absolute;
+    transform: rotateX(28deg);
+}
+
+#number {
+    font-family: 'PressStart2P';
+    font-size: 5vh;
+    text-transform: uppercase;
+    color: #36db38;
+    background-color: rgba(0, 136, 255, 0);
+    border: 0;
+    outline: none;
+    text-align: center;
+    height: 5vh;
+    width: 100%;
+}
+
+#number::placeholder {
+    color: #36db3934;
+    text-align: center;
+}
+
+.res10 {
+    color: #231fff;
+    font-family: 'PressStart2P';
+}
+
+.nameTitle {
+    color: #36db39;
+    font-size: 2vh;
+    font-family: 'PressStart2P';
+    margin: 0 0 3px 0;
+    text-decoration: underline;
+}
+
+.results {
+    font-family: 'PressStart2P';
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    color: #aba9ff;
+    margin-top: 20px;
+}
+
+.elemResult {
+    min-width: 256px;
+    margin: 0 10px 0 10px;
+}
+
+.system {
+    font-family: 'PressStart2P';
+    color: #aba9ff;
+    font-size: 1.2vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 24px 0;
+}
+
+.btnSystem {
+    font-family: 'PressStart2P';
+    width: 4vh;
+    height: 2vh;
+    font-size: 1.5vh;
+    background-color: #00000000;
+    color: white;
+    border: #00000000;
+}
+
+.btnSystem_active {
+    font-family: 'PressStart2P';
+    border: #00000000;
+    width: 4vh;
+    height: 2vh;
+    background-color: #e9e9e900;
+    color: white;
+    text-decoration: underline;
+}
+
+.title_login {
+    color: #ffffff;
+    font-size: 2vh;
+    font-family: 'PressStart2P';
+    display: flex;
+    margin: 0 0 3px 0;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input_login {
+    font-family: 'PressStart2P';
+    font-size: 2vh;
+    color: #36db38;
+    background-color: rgba(0, 136, 255, 0);
+    border: 0;
+    outline: none;
+    text-align: center;
+    height: 5vh;
+    width: auto;
+}
+
+.btn_login, #btn_logout {
+    font-family: 'PressStart2P';
+    z-index: 1;
+    font-size: 1vh;
+    text-transform: uppercase;
+    color: #36db38;
+    background-color: rgba(0, 136, 255, 0);
+    border: none;
+    border-style: double;
+    outline: none;
+    text-align: center;
+    height: 5vh;
+    width: 100%;
+    animation: pulseBorder 4s linear infinite;
+}
+
+#btn_logout {
+    margin: 15px 0 0 0;
+    animation: none;
+    color: #2ab6e0;
+}
+
+.seePassword {
+    display: flex;
+}
+
+#chat_block {
+    background-color: #ffffff1c;
+    max-width: 393px;
+    max-height: 257px;
+    width: 80%;
+    height: 20%;
+    position: absolute;
+    bottom: 0;
+    margin: 0 0 20px 0;
+    border-radius: 4px;
+}
+
+#chat_block header {
+    height: 10%;
+    max-height: 30px;
+    background-color: #ffffff23;
+    display: flex;
+}
+
+#chat_block header input {
+    width: 80%;
+    background-color: #ffffff25;
+    border-style: none;
+    color: #ffffff;
+    outline: none;
+
+}
+
+#chat_block header input::placeholder {
+    color: #ffffff86;
+}
+
+#chat_block header button {
+    width: 20%;
+    background-color: #ffffff00;
+    border-style: none;
+    color: #ffffff;
+    transition: 0.4s;
+
+}
+
+#chat_block header button:hover {
+    background-color: #ffffff3b;
+}
+
+#chat {
+    position: relative;
+    height: 90%;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#chat::-webkit-scrollbar {
+    background-color: #f3030f00;
+    width: 15px;
+    margin-right: 2px;
+}
+
+#chat::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 10px 10px rgba(255, 255, 255, 0.116);
+    border: solid 3px transparent;
+    border-radius: 7px;
+    background-color: #03cff300;
+}
+
+.message {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    transition: 0.1s;
+    font-size: 13px;
+}
+
+.message:hover {
+    background-color: #ffffff1a;
+}
+
+.message_title {
+    display: flex;
+    height: 32px;
+    align-items: center;
+    margin-left: 4px;
+}
+
+.message_text {
+    margin: 0 0 0 8px;
+    text-align: left;
+}
+
+.arrow-chat{
+    z-index: 1;
+    position: relative;
+    margin: 0 0 0 0 ;
+}
+
+.btn_registration{
+    display: block;
+    font-size: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.52);
+    background: #00000000;
+    border-bottom-color: rgba(255, 255, 255, 0.49);
+    border-top-color: #ffffff00;
+    border-left-color: #ffffff00;
+    border-right-color: #ffffff00;
+    transition: all 0.2s;
+}
+
+.btn_registration:hover{
+    border-bottom-color: white;
+    color: white;
+}
+
+.registrationUI{
+    z-index: 2;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    width: 40vh;
+    height: 60vh;
+    border-radius: 20px;
+}
+
+#closeUiReg{
+    width: 3vh;
+    height: 3vh;
+    position: absolute;
+    transform: translateX(223px) translateY(10px);
+    border-radius: 9px;
+    font-size: 3vh;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+.registrationUI input{
+    width: 70%;
+    margin: 5%;
+    height: 5%;
+    position: relative;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-left-color: transparent;
+    outline: none;
+    font-size: 26px;
+}
+
+.registrationUI h2{
+    position: relative;
+    font-size: 26px;
+    color: rgb(35, 35, 35);
+}
+
+.registrationUI button{
+    z-index: 1;
+    font-size: 1vh;
+    text-transform: uppercase;
+    color: #249025;
+    background-color: rgba(0, 136, 255, 0);
+    /* border: none; */
+    outline: none;
+    text-align: center;
+    height: 5vh;
+    width: 100%;
+    animation: pulseBorder 4s linear infinite;
+
+}
